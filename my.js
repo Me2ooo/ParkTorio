@@ -15,3 +15,13 @@ jQuery(function($) {
     var progressBarWidth = percent * $element.width() / 100;
     $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "%&nbsp;");
 } */
+
+
+var monday = {'width': '20%'};
+var tuesday = {'width': '50%'};
+
+/*
+$(progress-bar).playKeyframe(
+    'progress 1.75s forwards',
+    complete
+);*/

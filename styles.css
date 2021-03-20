@@ -28,27 +28,25 @@ body{
 
 
 .loading-bar{ /* this is the back(ground) of the bar */
-	width:60%;
+	width:10em;
 	height:30px;
 	background:#dfe6e9bb; /* can set to transparent for some real funky stuff */
 	transform: rotate(270deg);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .progress-bar{ /* this manages the actual value of the bar */
-  animation: progress 0.75s forwards;
-  animation:progress 1.85s forwards;
 	width:0%;
 	height:100%;
 	background:#a29bfe;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-  @keyframes progress{
+  /*@keyframes progress{
     100%{
       width:100%;
     }
   }
-
+*/
