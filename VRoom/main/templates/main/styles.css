@@ -1,0 +1,68 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Montserrat', sans-serif;
+	box-sizing:border-box;
+}
+
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100vh;
+	overflow:hidden;
+}
+
+.predictFeature{
+	margin: auto;
+	width: 10%;
+}
+
+#wrapper{
+	position:relative;
+	width:350px;
+	transform:scale(1);
+	opacity:1;
+	transform-origin:center -80%;
+}
+
+
+.loading-bar{ /* this is the back(ground) of the bar */
+	width:60%;
+	height:30px;
+	background:#dfe6e9bb; /* can set to transparent for some real funky stuff */
+	border-radius:5px;
+	transform: rotate(270deg);
+}
+
+.progress-bar{ /* this manages the actual value of the bar */
+  -webkit-animation:progress 3.5s forwards;
+  animation:progress 3.5s forwards;
+	width:0%;
+	height:100%;
+	background:#a29bfe;
+	border-radius:5px;
+	border:0 solid #0abde3;
+}
+
+  @keyframes progress{
+    0%{
+      width:6%;
+    }
+    50%{
+      border:0 solid #0abde3;
+    }
+    51%{
+      border:4px solid #0abde3;
+    }
+    85%{
+      width:11%;
+    }
+    95%{
+      border:4px solid #0abde3;
+      width:100%;
+    }
+    100%{
+      width:100%;
+    }
+  }
