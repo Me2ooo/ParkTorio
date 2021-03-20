@@ -12,32 +12,57 @@ jQuery(function ($) {
 		$(".jumbotron").css({ height: ($(window).height() * 0.75) + "px" });
 	});
 
-	var i;
-	for (i = 1; i < 19; i++) {
-		$.keyframe.define([{
-			name: 'progress' + i.toString(),
-			'100%': {
-				'height': i.toString() + '%',
-			}
-		},
-		]);
-	}
+
+
 
 });
 
 $(window).on("load", function () {
 
-	const numbers = [1, 2, 3, 4, 5];
+	function setBarValues(values) {
+		let i; let j;
+		for (i = 6, j = 0; i < 24; i++, j++) {
+			$.keyframe.define([{
+				name: 'animation' + j.toString(),
+				'100%': {
+					'height': values[j].toString() + '%',
+				}
+			},
+			]);
+			
+			$('#' + i.toString() + 'am').playKeyframe({
+				name: 'animation' + j.toString(),
+				duration: '1.75s',
+				fillMode: 'forwards',
+			});
+			console.log(i + " that was i; " + j + " that was j");
+		}
 
-	var i; var j;
-	for (i = 6, j = 1; i < 24; i++, j++) {
-		console.log(j);
-		$('#' + i.toString() + 'am').playKeyframe({
-			name: 'progress' + j.toString(),
-			duration: '1.75s',
-			fillMode: 'forwards',
-		})
+
+		/*$.each(values, function (index, value) {
+			$.keyframe.define([{
+				name: 'animation' + {index}.toString(),
+				'100%': {
+					'height': {value}.toString() + '%',
+				}
+			},
+			]);
+
+			$('#' + time.toString() + 'am').playKeyframe({
+				name: 'animation' + {index}.toString(),
+				duration: '1.75s',
+				fillMode: 'forwards',
+			});
+			console.log(index + ": " + value + "; and also time " + time.toString());
+			time++;
+		});
+		//$('#' + time.toString() + 'am').resetKeyframe(callback);*/
 	}
+
+	let arr = [35, 73, 12, 65, 85, 34, 77, 20, 95, 11, 64, 32, 64, 74, 23, 75, 12, 34]
+
+	setBarValues(arr);
+
 });
 /* function progressBar(percent, $element) {
 	if(percent > 100){
