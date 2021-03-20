@@ -1,11 +1,4 @@
 jQuery(function ($) {
-	$('.progressCircle').circleProgress({
-		max: 100,
-		value: 69,
-		textFormat: 'percent',
-		animation: 'easeInOutQuad',
-	});
-
 	$(".jumbotron").css({ height: ($(window).height() * 0.75) + "px" });
 
 	$(window).on("resize", function () {
@@ -31,47 +24,26 @@ $(window).on("load", function () {
 				duration: '1.75s',
 				fillMode: 'forwards',
 			});
-			console.log(i + " that was i; " + j + " that was j");
 		}
-
-
-		/*$.each(values, function (index, value) {
-			$.keyframe.define([{
-				name: 'animation' + {index}.toString(),
-				'100%': {
-					'height': {value}.toString() + '%',
-				}
-			},
-			]);
-
-			$('#' + time.toString() + 'am').playKeyframe({
-				name: 'animation' + {index}.toString(),
-				duration: '1.75s',
-				fillMode: 'forwards',
-			});
-			console.log(index + ": " + value + "; and also time " + time.toString());
-			time++;
-		});
-		//$('#' + time.toString() + 'am').resetKeyframe(callback);*/
 	}
 
-	let arr = [35, 73, 12, 65, 85, 34, 77, 20, 95, 11, 64, 32, 64, 74, 23, 75, 12, 34]
+	let arr = [35, 73, 12, 65, 85, 34, 77, 20, 95, 11, 64, 32, 64, 74, 23, 75, 12, 34];
 
-	$('.form-control').change(function() {
+	$('.form-control').change(function () {
+		var date = new Date($('.form-control').val());
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var year = date.getFullYear();
+		console.log(arr);
 		setBarValues(arr);
+
+		setTimeout(function () {
+			$.each(arr, function (index, value) {
+				arr.splice({ index }, 1, Math.floor((Math.random() * 100) + 1));
+			});
+			console.log(arr);
+			setBarValues(arr);
+		}, 3000);
+
 	});
-
-
-
 });
-/* function progressBar(percent, $element) {
-	if(percent > 100){
-	percent = 100
-	}
-
-	var progressBarWidth = percent * $element.width() / 100;
-	$element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "%&nbsp;");
-} */
-
-
-
