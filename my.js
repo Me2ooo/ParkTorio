@@ -11,10 +11,6 @@ jQuery(function ($) {
 	$(window).on("resize", function () {
 		$(".jumbotron").css({ height: ($(window).height() * 0.75) + "px" });
 	});
-
-
-
-
 });
 
 $(window).on("load", function () {
@@ -29,7 +25,7 @@ $(window).on("load", function () {
 				}
 			},
 			]);
-			
+
 			$('#' + i.toString() + 'am').playKeyframe({
 				name: 'animation' + j.toString(),
 				duration: '1.75s',
@@ -61,7 +57,11 @@ $(window).on("load", function () {
 
 	let arr = [35, 73, 12, 65, 85, 34, 77, 20, 95, 11, 64, 32, 64, 74, 23, 75, 12, 34]
 
-	setBarValues(arr);
+	$('.form-control').change(function() {
+		setBarValues(arr);
+	});
+
+
 
 });
 /* function progressBar(percent, $element) {
