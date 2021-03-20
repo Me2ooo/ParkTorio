@@ -13,10 +13,10 @@ body{
 	overflow:hidden;
 }
 
-.predictFeature{
+/*.predictFeature{
 	margin: auto;
 	width: 10%;
-}
+}*/
 
 #wrapper{
 	position:relative;
@@ -28,41 +28,25 @@ body{
 
 
 .loading-bar{ /* this is the back(ground) of the bar */
-	width:60%;
+	width:10em;
 	height:30px;
 	background:#dfe6e9bb; /* can set to transparent for some real funky stuff */
-	border-radius:5px;
 	transform: rotate(270deg);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .progress-bar{ /* this manages the actual value of the bar */
-  -webkit-animation:progress 3.5s forwards;
-  animation:progress 3.5s forwards;
 	width:0%;
 	height:100%;
 	background:#a29bfe;
-	border-radius:5px;
-	border:0 solid #0abde3;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-  @keyframes progress{
-    0%{
-      width:6%;
-    }
-    50%{
-      border:0 solid #0abde3;
-    }
-    51%{
-      border:4px solid #0abde3;
-    }
-    85%{
-      width:11%;
-    }
-    95%{
-      border:4px solid #0abde3;
-      width:100%;
-    }
+  /*@keyframes progress{
     100%{
       width:100%;
     }
   }
+*/
