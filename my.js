@@ -45,16 +45,9 @@ $(window).on("load", function () {
 		var day = date.getDate();
 		var month = date.getMonth() + 1;
 		var year = date.getFullYear();
-		console.log(arr);
+		$.each(arr, function (index, value) {
+			arr.splice({ index }, 1, Math.floor((Math.random() * 100) + 1));
+		});
 		setBarValues(arr);
-
-		setTimeout(function () {
-			$.each(arr, function (index, value) {
-				arr.splice({ index }, 1, Math.floor((Math.random() * 100) + 1));
-			});
-			console.log(arr);
-			setBarValues(arr);
-		}, 3000);
-
 	});
 });
