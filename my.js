@@ -38,16 +38,19 @@ $(window).on("load", function () {
 		}
 	}
 
-	let arr = [35, 73, 12, 65, 85, 34, 77, 20, 95, 11, 64, 32, 64, 74, 23, 75, 12, 34];
+	function generateArray() {
+		let arr = [];
+		for (let i = 0; i < 18; i++) {
+			arr.push(Math.floor((Math.random() * 100) + 1));
+		}
+		return arr;
+	}
 
 	$('.form-control').change(function () {
 		var date = new Date($('.form-control').val());
 		var day = date.getDate();
 		var month = date.getMonth() + 1;
 		var year = date.getFullYear();
-		$.each(arr, function (index, value) {
-			arr.splice({ index }, 1, Math.floor((Math.random() * 100) + 1));
-		});
-		setBarValues(arr);
+		setBarValues(generateArray());
 	});
 });
