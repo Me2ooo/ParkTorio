@@ -8,6 +8,17 @@ jQuery(function ($) {
 
 $(window).on("load", function () {
 
+	function positiveArray(numbers) {
+		let positiveNumbers = [];
+
+		for (i in numbers) {
+			if (i > 0) positiveNumbers.push(i);
+		}
+		return positiveNumbers;
+	}
+
+	console.log(positiveArray([-2, -10,]));
+
 	function setBarValues(values) {
 		let i; let j;
 		for (i = 6, j = 0; i < 24; i++, j++) {
